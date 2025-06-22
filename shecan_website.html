@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She CAn - Empowering Young Women</title>
+    <style>
+        .back-nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .back-nav:hover {
+            background-color: rgba(0,0,0,0.9);
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #8B5DC3 0%, #B084CC 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8B5DC3 0%, #B084CC 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background: white;
+            color: #8B5DC3;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B5DC3;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: white;
+        }
+
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Pillars Section */
+        .pillars {
+            background: #f8f9fa;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .pillar-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(139, 93, 195, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 93, 195, 0.2);
+        }
+
+        .pillar-card h3 {
+            color: #8B5DC3;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .pillar-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team {
+            background: white;
+        }
+
+        /* Workshop Section */
+        .workshop {
+            background: white;
+        }
+
+        .workshop-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .workshop-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .workshop-info h3,
+        .workshop-programme h3 {
+            color: #8B5DC3;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #8B5DC3;
+        }
+
+        .info-item strong {
+            color: #8B5DC3;
+            margin-right: 0.5rem;
+        }
+
+        .programme-items {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .programme-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        .programme-item .time {
+            font-weight: bold;
+            color: #8B5DC3;
+            font-size: 0.9rem;
+        }
+
+        .programme-item .activity {
+            color: #555;
+        }
+
+        .workshop-cta {
+            background: linear-gradient(135deg, #8B5DC3 0%, #B084CC 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .workshop-cta h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .workshop-cta p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .workshop-cta .btn {
+            background: white;
+            color: #8B5DC3;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            border: 4px solid #8B5DC3;
+        }
+
+        .team-card h3 {
+            color: #8B5DC3;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .team-card .role {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #8B5DC3 0%, #B084CC 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .pillars-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workshop-details {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .programme-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .programme-item .time {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for sections */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-nav">← Back to Design Options</a>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">She CAn</div>
+            <!-- To use your actual logo, upload the logo file to your hosting and replace above with: -->
+            <!-- <img src="your-logo-file.png" alt="She CAn Logo" style="height: 50px;"> -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#pillars">Our Pillars</a></li>
+                <li><a href="#workshop">Workshop</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>She CAn</h1>
+                <p>Empowering young women from underserved communities to confidently pursue their potential</p>
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Problem Section -->
+    <section id="about" class="problem">
+        <div class="container">
+            <h2 class="section-title fade-in">The Challenge We Address</h2>
+            <div class="problem-content fade-in">
+                <p>Too many high potential girls from underserved communities are held back not by lack of talent, but by lack of access. Limited career guidance, few visible role models, and unequal exposure to professional opportunities contribute to low tertiary education rates and high youth unemployment.</p>
+                <br>
+                <p><strong>These girls need access, exposure, and support to take up space where they belong.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="pillars">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Mission & Vision</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card fade-in">
+                    <h3>Our Mission</h3>
+                    <p>To inspire confidence in young women from underserved communities to drive social upliftment by providing access to career guidance, wellness education, and self-empowerment tools.</p>
+                </div>
+                <div class="pillar-card fade-in">
+                    <h3>Our Vision</h3>
+                    <p>To see every young woman from underserved communities confidently pursue her potential, empowered with knowledge, wellness, and purpose.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section id="pillars" class="pillars">
+        <div class="container">
+            <h2 class="section-title fade-in">She CAn Pillars</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card fade-in">
+                    <h3>Career Guidance</h3>
+                    <p>We equip academically high-performing high school girls from underserved communities with the knowledge and tools to navigate their future careers.</p>
+                </div>
+                <div class="pillar-card fade-in">
+                    <h3>Feminine Wellness</h3>
+                    <p>We promote dignity and wellbeing by providing education on menstrual health, hygiene practices, mental wellness and personal care.</p>
+                </div>
+                <div class="pillar-card fade-in">
+                    <h3>Self-empowerment & Confidence Building</h3>
+                    <p>We create safe and inspiring spaces where young women can find their voice, build self-belief, build their brand and embrace their unique value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Section -->
+    <section id="workshop" class="workshop">
+        <div class="container">
+            <h2 class="section-title fade-in">Career Guidance Workshop - Chartered Accountancy</h2>
+            <div class="workshop-intro fade-in">
+                <p>Our flagship career guidance workshop is designed to introduce high-performing learners to the CA(SA) career path and opportunities, building confidence and inspiring future leaders.</p>
+            </div>
+            
+            <div class="workshop-details">
+                <div class="workshop-info fade-in">
+                    <h3>Workshop Details</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>Date:</strong> Monday, 6 October 2025 (school holiday)
+                        </div>
+                        <div class="info-item">
+                            <strong>Time:</strong> 08h00 - 15h00
+                        </div>
+                        <div class="info-item">
+                            <strong>Audience:</strong> 20-24 high-performing Grade 9 and 11 girls
+                        </div>
+                        <div class="info-item">
+                            <strong>Schools:</strong> 10-12 schools from underserved communities
+                        </div>
+                        <div class="info-item">
+                            <strong>Focus:</strong> CA(SA) career path and opportunities
+                        </div>
+                        <div class="info-item">
+                            <strong>Objective:</strong> Build confidence, raise aspirations, inspire future leaders
+                        </div>
+                    </div>
+                </div>
+
+                <div class="workshop-programme fade-in">
+                    <h3>Programme Highlights</h3>
+                    <div class="programme-items">
+                        <div class="programme-item">
+                            <div class="time">09h00-09h50</div>
+                            <div class="activity">Opening and Ice Breaker</div>
+                        </div>
+                        <div class="programme-item">
+                            <div class="time">10h00-11h00</div>
+                            <div class="activity">Keynote Speaker & Q&A with Audit Firm Partner</div>
+                        </div>
+                        <div class="programme-item">
+                            <div class="time">11h00-11h30</div>
+                            <div class="activity">Audit Firm Opportunities Presentation</div>
+                        </div>
+                        <div class="programme-item">
+                            <div class="time">11h30-12h00</div>
+                            <div class="activity">Interactive Activity: Letter to My Future Self</div>
+                        </div>
+                        <div class="programme-item">
+                            <div class="time">12h30-13h00</div>
+                            <div class="activity">Office Tour Experience</div>
+                        </div>
+                        <div class="programme-item">
+                            <div class="time">13h00-13h30</div>
+                            <div class="activity">SAICA Thuthuka Programme Information</div>
+                        </div>
+                        <div class="programme-item">
+                            <div class="time">13h30-14h00</div>
+                            <div class="activity">My CA(SA) Journey - Young Professional Panel</div>
+                        </div>
+                        <div class="programme-item">
+                            <div class="time">14h00-14h50</div>
+                            <div class="activity">Creative Presentation Activity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshop-cta fade-in">
+                <h3>Partnership Opportunities</h3>
+                <p>We're seeking partners to help us deliver this impactful workshop. If you're interested in sponsoring or collaborating with us to empower young women in the CA profession, we'd love to hear from you.</p>
+                <a href="#contact" class="btn">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #8B5DC3, #B084CC); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">RB</div>
+                    <h3>Razaan Bester CA(SA)</h3>
+                    <div class="role">Founder & Director</div>
+                    <p>Razaan is a Chartered Accountant with extensive experience in public sector finance and strategic leadership. She has led high-performing teams, overseen complex financial reporting processes, and actively mentors young professionals entering the field. As the founder of She CAn, she combines technical expertise with a deep commitment to empowering young women through access, exposure, and mentorship.</p>
+                </div>
+                <div class="team-card fade-in">
+                    <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #8B5DC3, #B084CC); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">NS</div>
+                    <h3>Najmeerah Simons CA(SA)</h3>
+                    <div class="role">Director</div>
+                    <p>Details coming soon...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in" style="color: white;">Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item fade-in">
+                    <h3>Email</h3>
+                    <a href="mailto:razaan@shecannpc.co.za">razaan@shecannpc.co.za</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>Phone</h3>
+                    <a href="tel:+27835527228">083 552 7228</a>
+                </div>
+                <div class="contact-item fade-in">
+                    <h3>Registration</h3>
+                    <p>2025/325145/08</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 She CAn. All rights reserved. | Empowering young women to reach their potential.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(139, 93, 195, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #8B5DC3 0%, #B084CC 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
