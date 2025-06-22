@@ -1,0 +1,5 @@
+*.pdf
+*.Zone.Identifier
+*.md
+.DS_Store
+Thumbs.db
