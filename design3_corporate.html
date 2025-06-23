@@ -5,23 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>She CAn - Professional Development for Young Women</title>
     <style>
-        .back-nav {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background-color: rgba(0,0,0,0.7);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .back-nav:hover {
-            background-color: rgba(0,0,0,0.9);
-        }
-    </style>
-    <style>
         * {
             margin: 0;
             padding: 0;
@@ -322,17 +305,23 @@
         }
 
         .leader-avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #8B5DC3, #B084CC);
-            border-radius: 8px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
             margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid #ffffff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(139, 93, 195, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+        
+        .leader-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(139, 93, 195, 0.3);
         }
 
         .leader-card h3 {
@@ -403,50 +392,88 @@
             color: #B084CC;
         }
 
-        /* Enhanced Footer */
+        /* Clean Footer */
         footer {
-            background: #1a252f;
+            background: #2c3e50;
             color: white;
-            padding: 60px 0 20px;
+            padding: 3rem 0 1rem;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
-        .footer-section h3 {
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #8B5DC3;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .footer-section p,
-        .footer-section li {
-            color: #adb5bd;
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
         }
 
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
+        .footer-links a {
             color: #adb5bd;
             text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 300;
+            font-weight: 400;
+            transition: color 0.3s ease;
         }
 
-        .footer-section a:hover {
+        .footer-links a:hover {
             color: #8B5DC3;
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact a {
+            color: #8B5DC3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(139, 93, 195, 0.2);
+            color: #adb5bd;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
 
         .social-links {
@@ -584,10 +611,199 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        /* Application Section Styles */
+        .application {
+            padding: 6rem 0;
+            background: #ffffff;
+        }
+
+        .application-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .application-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .application-info ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .application-info li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .application-info li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8B5DC3;
+            font-weight: bold;
+        }
+
+        .eligibility {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #8B5DC3;
+        }
+
+        .application-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .application-form h3 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .workshop-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: #fafbfc;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8B5DC3;
+            box-shadow: 0 0 0 3px rgba(139, 93, 195, 0.1);
+            background: white;
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #8B5DC3, #B084CC);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 93, 195, 0.3);
+        }
+
+        .form-note {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #8B5DC3;
+        }
+
+        .form-note p {
+            color: #555;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Embedded Form Styling */
+        .embedded-form-container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .form-container iframe {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .application-benefits {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .application-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .workshop-form .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .application-form {
+                padding: 1.5rem;
+            }
+
+            .form-container {
+                padding: 0.5rem !important;
+            }
+
+            .form-container iframe {
+                height: 1600px;
+            }
+
+            .application-benefits div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-nav">← Back to Design Options</a>
     <!-- Header -->
     <header>
         <nav class="container">
@@ -599,6 +815,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#application">Apply Now</a></li>
             </ul>
         </nav>
     </header>
@@ -621,24 +838,24 @@
     <!-- Value Proposition Section -->
     <section id="services" class="value-prop">
         <div class="container">
-            <h2 class="section-title fade-in">Professional Development Solutions</h2>
-            <p class="section-subtitle fade-in">Comprehensive programs designed to bridge the gap between education and professional success</p>
+            <h2 class="section-title fade-in">She CAn Pillars</h2>
+            <p class="section-subtitle fade-in">Our three foundational pillars that guide everything we do to empower young women from underserved communities</p>
             
             <div class="value-grid">
                 <div class="value-card fade-in">
                     <div class="value-icon">01</div>
                     <h3>Career Guidance</h3>
-                    <p>Strategic career planning and mentorship to navigate professional pathways with confidence and clarity.</p>
+                    <p>We equip academically high-performing high school girls from underserved communities with the knowledge and tools to navigate their future careers.</p>
                 </div>
                 <div class="value-card fade-in">
                     <div class="value-icon">02</div>
-                    <h3>Professional Skills</h3>
-                    <p>Essential workplace competencies including communication, leadership, and business acumen development.</p>
+                    <h3>Feminine Wellness</h3>
+                    <p>We promote dignity and wellbeing by providing education on menstrual health, hygiene practices, mental wellness and personal care.</p>
                 </div>
                 <div class="value-card fade-in">
                     <div class="value-icon">03</div>
-                    <h3>Personal Empowerment</h3>
-                    <p>Building confidence, personal brand, and executive presence for long-term professional success.</p>
+                    <h3>Self-empowerment and Confidence Building</h3>
+                    <p>We create safe and inspiring spaces where young women can find their voice, build self-belief, build their brand and embrace their unique value.</p>
                 </div>
             </div>
         </div>
@@ -683,13 +900,13 @@
             <p class="section-subtitle fade-in">Experienced professionals committed to developing the next generation of female leaders</p>
             <div class="leadership-grid">
                 <div class="leader-card fade-in">
-                    <div class="leader-avatar">RB</div>
+                    <img src="Razaan.jpeg" alt="Razaan Bester" class="leader-avatar">
                     <h3>Razaan Bester CA(SA)</h3>
                     <div class="leader-title">Founder & Managing Director</div>
-                    <p>Senior Chartered Accountant with extensive corporate leadership experience. Specializes in strategic finance, organizational development, and executive mentorship.</p>
+                    <p>Senior Chartered Accountant with extensive corporate leadership experience. Specialises in strategic finance, organisational development, and executive mentorship.</p>
                 </div>
                 <div class="leader-card fade-in">
-                    <div class="leader-avatar">NS</div>
+                    <img src="Najmeerah.jpeg" alt="Najmeerah Simons" class="leader-avatar">
                     <h3>Najmeerah Simons CA(SA)</h3>
                     <div class="leader-title">Director</div>
                     <p>Details coming soon...</p>
@@ -698,60 +915,110 @@
         </div>
     </section>
 
+    <!-- Workshop Application Section -->
+    <section id="application" class="application">
+        <div class="container">
+            <h2 class="section-title fade-in">Apply for Career Guidance Workshop</h2>
+            <p class="section-subtitle fade-in">Join our comprehensive career development program designed specifically for young women entering the corporate world</p>
+            
+            <div class="application-content">
+                <div class="application-info fade-in">
+                    <h3>Career Guidance Workshop</h3>
+                    <p><strong>Our Mission:</strong> To build confidence, raise aspirations, and inspire the next generation of female leaders in the accounting profession</p>
+                    
+                    <h4>Workshop Programme Highlights:</h4>
+                    <ul>
+                        <li>Comprehensive introduction to the CA(SA) career pathway and opportunities</li>
+                        <li>Inspiring keynote presentation with interactive Q&A session</li>
+                        <li>Exclusive insights into audit firm career opportunities and culture</li>
+                        <li>Behind-the-scenes professional office tour and networking</li>
+                        <li>Detailed overview of the SAICA Thuthuka Programme and support available</li>
+                        <li>Personal journey stories from successful CA(SA) professionals</li>
+                    </ul>
+                </div>
+                
+                <div class="application-form fade-in">
+                    <h3>Application Form</h3>
+                    <!-- APPLICATION OPTIONS -->
+                    <div class="application-options">
+                        
+                        <!-- Option 1: Prominent Call-to-Action -->
+                        <div class="primary-cta" style="background: linear-gradient(135deg, #8B5DC3, #B084CC); padding: 4rem 2rem; border-radius: 20px; text-align: center; color: white; margin-bottom: 3rem; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.05); opacity: 0.3;"></div>
+                            
+                            <div style="position: relative; z-index: 2;">
+                                <h3 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Ready to Apply?</h3>
+                                <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto;">Join our career guidance workshop and take the first step towards your professional future</p>
+                                
+                                <a href="https://forms.gle/fKzow3kaXT2wmpcP7" 
+                                   target="_blank" 
+                                   style="display: inline-block; background: white; color: #8B5DC3; padding: 1.5rem 3rem; border-radius: 50px; font-weight: 700; font-size: 1.2rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s ease; border: none; cursor: pointer;"
+                                   onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.3)'"
+                                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.2)'">
+                                    🚀 Start Your Application
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Option 3: Alternative Contact -->
+                        <div class="alternative-contact" style="background: #f8f9fa; padding: 2rem; border-radius: 12px; text-align: center; border: 2px dashed #8B5DC3;">
+                            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Prefer to Apply by Email?</h4>
+                            <p style="color: #666; margin-bottom: 1.5rem;">Send your application details directly to our team</p>
+                            <a href="mailto:razaan@shecannpc.co.za?subject=Workshop Application&body=Hi, I would like to apply for the Career Guidance Workshop. Please find my details below:%0D%0A%0D%0AName:%0D%0ASurname:%0D%0ASchool:%0D%0AEmail:%0D%0APhone:%0D%0AMath Grade:%0D%0AEnglish Grade:" 
+                               style="display: inline-block; background: #8B5DC3; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;"
+                               onmouseover="this.style.background='#7a4db8'"
+                               onmouseout="this.style.background='#8B5DC3'">
+                                📧 Email Application
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="success-message" style="display:none; text-align:center; padding:2rem; background:#d4f6d4; border-radius:8px; margin-top:2rem;">
+                        <h3 style="color:#2d5a2d; margin-bottom:1rem;">🎉 Application Submitted Successfully!</h3>
+                        <p style="color:#2d5a2d; margin:0;">Thank you for applying! We'll review your application and contact you within 5 business days.</p>
+                    </div>
+                    
+                    <div id="loading-message" style="display:none; text-align:center; padding:2rem; background:#f0f8ff; border-radius:8px; margin-top:2rem;">
+                        <h3 style="color:#2c3e50; margin-bottom:1rem;">Submitting Application...</h3>
+                        <p style="color:#2c3e50; margin:0;">Please wait while we process your application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Enhanced Footer -->
+    <!-- Clean Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="Image-removebg-preview.png" alt="She CAn Logo">
-                        <span>She CAn</span>
-                    </div>
-                    <p>Professional development and empowerment solutions for young women entering the corporate world. Building tomorrow's leaders today.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">Email</a>
-                        <a href="#" class="social-link">Website</a>
-                    </div>
+                <div class="footer-logo">
+                    <img src="Image-removebg-preview.png" alt="She CAn Logo">
+                    <span>She CAn</span>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#services">Career Guidance</a></li>
-                        <li><a href="#services">Professional Skills</a></li>
-                        <li><a href="#services">Personal Empowerment</a></li>
-                        <li><a href="#services">Executive Development</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <a href="#services">Our Pillars</a>
+                    <a href="#leadership">Leadership</a>
+                    <a href="#application">Apply</a>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#home">About Us</a></li>
-                        <li><a href="#leadership">Leadership Team</a></li>
-                        <li><a href="#services">Our Programs</a></li>
-                        <li><a href="#contact">Partner With Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Business Inquiries</p>
-                    <p><a href="mailto:razaan@shecannpc.co.za">razaan@shecannpc.co.za</a></p>
-                    <p>Direct Line: <a href="tel:+27835527228">+27 83 552 7228</a></p>
-                    <p>Organization Reg: 2025/325145/08</p>
+                <div class="footer-contact">
+                    <a href="mailto:razaan@shecannpc.co.za">📧 razaan@shecannpc.co.za</a>
+                    <a href="tel:+27835527228">📞 +27 83 552 7228</a>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 She CAn Professional Development Solutions. All rights reserved. | Empowering the next generation of female leaders.</p>
+                <p>&copy; 2025 She CAn. All rights reserved. | Organisation Reg: 2025/325145/08</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // No additional JavaScript needed for embedded form
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
