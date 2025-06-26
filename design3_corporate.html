@@ -394,8 +394,8 @@
 
         /* Clean Footer */
         footer {
-            background: #2c3e50;
-            color: white;
+            background: #f8f9fa;
+            color: #2c3e50;
             padding: 3rem 0 1rem;
         }
 
@@ -431,7 +431,7 @@
         }
 
         .footer-links a {
-            color: #adb5bd;
+            color: #6c757d;
             text-decoration: none;
             font-weight: 400;
             transition: color 0.3s ease;
@@ -459,7 +459,7 @@
             padding-top: 2rem;
             margin-top: 2rem;
             border-top: 1px solid rgba(139, 93, 195, 0.2);
-            color: #adb5bd;
+            color: #6c757d;
             font-size: 0.85rem;
         }
 
@@ -514,12 +514,12 @@
         }
 
         .footer-logo img {
-            height: 40px;
+            height: 80px;
             width: auto;
         }
 
         .footer-logo span {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
             color: #8B5DC3;
             letter-spacing: 1px;
@@ -801,6 +801,68 @@
                 gap: 1rem !important;
             }
         }
+
+        /* Gallery Section Styles */
+        .gallery {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .gallery-placeholder {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #6c757d;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .gallery-placeholder p {
+            margin: 0;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #495057;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .gallery-placeholder {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -830,7 +892,7 @@
             <p>Professional development and empowerment for young women entering the <span class="highlight">corporate world</span></p>
             <div class="cta-buttons">
                 <a href="#services" class="btn btn-primary">Our Programs</a>
-<a href="mailto:razaan@shecannpc.co.za" class="btn btn-secondary">Get Started</a>
+<a href="mailto:razaan@shecannpc.co.za" class="btn btn-secondary">Contact us</a>
             </div>
         </div>
     </section>
@@ -889,7 +951,54 @@
             <p class="fade-in">Join our comprehensive development program and take the first step toward your professional future.</p>
             
             
-<a href="mailto:razaan@shecannpc.co.za" class="btn fade-in">Apply Now</a>
+<a href="#application" class="btn fade-in">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title fade-in">Gallery</h2>
+            <p class="section-subtitle fade-in">Moments from our workshops and events</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <div class="gallery-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Photo 1</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="gallery-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Photo 2</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="gallery-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Photo 3</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="gallery-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Photo 4</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="gallery-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Photo 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="gallery-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Photo 6</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -995,7 +1104,6 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="Image-removebg-preview.png" alt="She CAn Logo">
-                    <span>She CAn</span>
                 </div>
                 
                 <div class="footer-links">
