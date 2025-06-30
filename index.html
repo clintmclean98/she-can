@@ -810,9 +810,10 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
+            max-width: 600px;
+            margin: 3rem auto 0;
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .gallery-item {
@@ -826,6 +827,33 @@
         .gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            display: block;
+            background: #f8f9fa;
+        }
+
+        .gallery-caption {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .gallery-caption h4 {
+            margin: 0 0 0.5rem 0;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .gallery-caption p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .gallery-placeholder {
@@ -875,7 +903,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Pillars</a></li>
                 <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#application">Apply Now</a></li>
             </ul>
@@ -889,10 +917,30 @@
                 <img src="Image-removebg-preview.png" alt="She CAn Logo">
             </div>
             <h1>She CAn</h1>
-            <p>Professional development and empowerment for young women entering the <span class="highlight">corporate world</span></p>
+            <p>She CAn is a non-profit company dedicated to empowering young women from the Cape flats and townships through career guidance, feminine wellness, and self-empowerment initiatives.</p>
             <div class="cta-buttons">
-                <a href="#services" class="btn btn-primary">Our Programs</a>
-<a href="mailto:razaan@shecannpc.co.za" class="btn btn-secondary">Contact us</a>
+                <a href="mailto:info@shecannpc.co.za" class="btn btn-secondary">Contact us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="value-prop" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Strategic Direction</h2>
+            <p class="section-subtitle fade-in">Clear mission and vision guiding our commitment to empowering young women</p>
+            
+            <div class="value-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+                <div class="value-card fade-in">
+                    <div class="value-icon">M</div>
+                    <h3>Our Mission</h3>
+                    <p>To inspire confidence in young women from underserved communities to drive social upliftment by providing access to career guidance, wellness education, and self-empowerment tools.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-icon">V</div>
+                    <h3>Our Vision</h3>
+                    <p>To see every young woman from underserved communities confidently pursue her potential, empowered with knowledge, wellness, and purpose.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -923,32 +971,11 @@
         </div>
     </section>
 
-    <!-- Mission & Vision Section -->
-    <section class="value-prop" style="background: #f8f9fa;">
-        <div class="container">
-            <h2 class="section-title fade-in">Our Strategic Direction</h2>
-            <p class="section-subtitle fade-in">Clear mission and vision guiding our commitment to empowering young women</p>
-            
-            <div class="value-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
-                <div class="value-card fade-in">
-                    <div class="value-icon">M</div>
-                    <h3>Our Mission</h3>
-                    <p>To inspire confidence in young women from underserved communities to drive social upliftment by providing access to career guidance, wellness education, and self-empowerment tools.</p>
-                </div>
-                <div class="value-card fade-in">
-                    <div class="value-icon">V</div>
-                    <h3>Our Vision</h3>
-                    <p>To see every young woman from underserved communities confidently pursue her potential, empowered with knowledge, wellness, and purpose.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2 class="fade-in">Ready to Unlock Your Potential?</h2>
-            <p class="fade-in">Join our comprehensive development program and take the first step toward your professional future.</p>
+            <p class="fade-in">Join our workshops and take the first step toward your professional future.</p>
             
             
 <a href="#application" class="btn fade-in">Apply Now</a>
@@ -958,44 +985,15 @@
     <!-- Gallery Section -->
     <section class="gallery">
         <div class="container">
-            <h2 class="section-title fade-in">Gallery</h2>
-            <p class="section-subtitle fade-in">Moments from our workshops and events</p>
+            <h2 class="section-title fade-in">Upcoming Event</h2>
+            <p class="section-subtitle fade-in">Join us for our official launch and fundraiser</p>
             
             <div class="gallery-grid">
                 <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">
-                        <div class="placeholder-icon">📸</div>
-                        <p>Photo 1</p>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">
-                        <div class="placeholder-icon">📸</div>
-                        <p>Photo 2</p>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">
-                        <div class="placeholder-icon">📸</div>
-                        <p>Photo 3</p>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">
-                        <div class="placeholder-icon">📸</div>
-                        <p>Photo 4</p>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">
-                        <div class="placeholder-icon">📸</div>
-                        <p>Photo 5</p>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">
-                        <div class="placeholder-icon">📸</div>
-                        <p>Photo 6</p>
+                    <img src="flyer.jpeg" alt="Her Power to Empower Launch Event Flyer" class="gallery-image">
+                    <div class="gallery-caption">
+                        <h4>Her Power to Empower - Launch & Fundraiser High Tea</h4>
+                        <p>Join us on Saturday, 16 August 2025 from 16:00-18:30 at Café51, Woodstock for our official launch event. Tickets available on Quicket.</p>
                     </div>
                 </div>
             </div>
@@ -1012,13 +1010,13 @@
                     <img src="Razaan.jpeg" alt="Razaan Bester" class="leader-avatar">
                     <h3>Razaan Bester CA(SA)</h3>
                     <div class="leader-title">Founder & Managing Director</div>
-                    <p>Senior Chartered Accountant with extensive corporate leadership experience. Specialises in strategic finance, organisational development, and executive mentorship.</p>
+                    <p>Razaan Bester is a qualified Chartered Accountant with a strong academic and professional background in financial management and governance. She is passionate about using her expertise to uplift and empower the next generation of young women leaders.</p>
                 </div>
                 <div class="leader-card fade-in">
                     <img src="Najmeerah.jpeg" alt="Najmeerah Simons" class="leader-avatar">
                     <h3>Najmeerah Simons CA(SA)</h3>
                     <div class="leader-title">Director</div>
-                    <p>Details coming soon...</p>
+                    <p>Najmeerah Simons is a qualified Chartered Accountant with a strong foundation in public sector auditing and financial governance. She is committed to driving accountability, transparency, and ethical leadership in the finance profession.</p>
                 </div>
             </div>
         </div>
@@ -1028,7 +1026,7 @@
     <section id="application" class="application">
         <div class="container">
             <h2 class="section-title fade-in">Apply for Career Guidance Workshop</h2>
-            <p class="section-subtitle fade-in">Join our comprehensive career development program designed specifically for young women entering the corporate world</p>
+            <p class="section-subtitle fade-in">Join our career guidance workshop on 6 October 2025 specifically for grade 9 and 11 girls interested in exposure to the CA(SA) designation</p>
             
             <div class="application-content">
                 <div class="application-info fade-in">
@@ -1041,7 +1039,6 @@
                         <li>Inspiring keynote presentation with interactive Q&A session</li>
                         <li>Exclusive insights into audit firm career opportunities and culture</li>
                         <li>Behind-the-scenes professional office tour and networking</li>
-                        <li>Detailed overview of the SAICA Thuthuka Programme and support available</li>
                         <li>Personal journey stories from successful CA(SA) professionals</li>
                     </ul>
                 </div>
@@ -1051,34 +1048,30 @@
                     <!-- APPLICATION OPTIONS -->
                     <div class="application-options">
                         
-                        <!-- Option 1: Prominent Call-to-Action -->
+                        <!-- Applications Coming Soon -->
                         <div class="primary-cta" style="background: linear-gradient(135deg, #8B5DC3, #B084CC); padding: 4rem 2rem; border-radius: 20px; text-align: center; color: white; margin-bottom: 3rem; position: relative; overflow: hidden;">
                             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.05); opacity: 0.3;"></div>
                             
                             <div style="position: relative; z-index: 2;">
-                                <h3 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Ready to Apply?</h3>
-                                <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto;">Join our career guidance workshop and take the first step towards your professional future</p>
+                                <h3 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Applications Coming Soon</h3>
+                                <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto;">Applications for our career guidance workshop open on <strong>1 August 2025</strong>. Join our workshop on 6 October 2025 and take the first step towards your professional future.</p>
                                 
-                                <a href="https://forms.gle/fKzow3kaXT2wmpcP7" 
-                                   target="_blank" 
-                                   style="display: inline-block; background: white; color: #8B5DC3; padding: 1.5rem 3rem; border-radius: 50px; font-weight: 700; font-size: 1.2rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s ease; border: none; cursor: pointer;"
-                                   onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.3)'"
-                                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.2)'">
-                                    🚀 Start Your Application
-                                </a>
+                                <div style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 1.5rem 3rem; border-radius: 50px; font-weight: 700; font-size: 1.2rem; border: 2px solid rgba(255,255,255,0.3);">
+                                    📅 Applications Coming Soon
+                                </div>
                             </div>
                         </div>
                         
                         
-                        <!-- Option 3: Alternative Contact -->
+                        <!-- Contact for More Information -->
                         <div class="alternative-contact" style="background: #f8f9fa; padding: 2rem; border-radius: 12px; text-align: center; border: 2px dashed #8B5DC3;">
-                            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Prefer to Apply by Email?</h4>
-                            <p style="color: #666; margin-bottom: 1.5rem;">Send your application details directly to our team</p>
-                            <a href="mailto:razaan@shecannpc.co.za?subject=Workshop Application&body=Hi, I would like to apply for the Career Guidance Workshop. Please find my details below:%0D%0A%0D%0AName:%0D%0ASurname:%0D%0ASchool:%0D%0AEmail:%0D%0APhone:%0D%0AMath Grade:%0D%0AEnglish Grade:" 
+                            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Want to Stay Updated?</h4>
+                            <p style="color: #666; margin-bottom: 1.5rem;">Contact us for more information about the upcoming workshop</p>
+                            <a href="mailto:info@shecannpc.co.za?subject=Career Guidance Workshop Inquiry&body=Hi, I would like more information about the Career Guidance Workshop scheduled for 6 October 2025. Please send me details when applications open on 1 August 2025." 
                                style="display: inline-block; background: #8B5DC3; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;"
                                onmouseover="this.style.background='#7a4db8'"
                                onmouseout="this.style.background='#8B5DC3'">
-                                📧 Email Application
+                                📧 Get More Info
                             </a>
                         </div>
                         
@@ -1113,8 +1106,7 @@
                 </div>
                 
                 <div class="footer-contact">
-                    <a href="mailto:razaan@shecannpc.co.za">📧 razaan@shecannpc.co.za</a>
-                    <a href="tel:+27835527228">📞 +27 83 552 7228</a>
+                    <a href="mailto:info@shecannpc.co.za">📧 info@shecannpc.co.za</a>
                 </div>
             </div>
             
